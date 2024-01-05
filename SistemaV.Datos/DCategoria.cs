@@ -64,6 +64,36 @@ namespace SistemaV.Datos
             }
         }
 
+        public string Existe(string Valor)
+        {
+            string Respuesta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion2.getInstancia2().CrearConexion2();
+                SqlCommand Comando = new SqlCommand("categoria_existe", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = Valor;
+                SqlParameter ParExiste = new SqlParameter();
+                ParExiste.ParameterName = "@existe";
+                ParExiste.SqlDbType = SqlDbType.Int;
+                ParExiste.Direction = ParameterDirection.Output;
+                Comando.Parameters.Add(ParExiste);
+                SqlCon.Open();
+                Comando.ExecuteNonQuery();
+                Respuesta = Convert.ToString(ParExiste.Value);
+            }
+            catch (Exception ex)
+            {
+                Respuesta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Respuesta;
+        }
+
         public string Insertar(Categoria obj) 
         {
             string Respuesta = "";
