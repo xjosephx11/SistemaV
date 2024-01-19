@@ -20,8 +20,8 @@ namespace SistemaV.Datos
         {
             this.Base = "dbsistema";
             this.Servidor = "DESKTOP-6NBMCT5\\MSSQLSERVER01";
-            this.Usuario = "sa";
-            this.Clave = "jgamboa12";
+            this.Usuario = "";
+            this.Clave = "";
             this.Seguridad = true;
         }
         public SqlConnection CrearConexion() 

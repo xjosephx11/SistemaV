@@ -63,9 +63,29 @@ namespace SistemaV.Presentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Banned_User {
+            get {
+                object obj = ResourceManager.GetObject("Banned User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap compra_m {
             get {
                 object obj = ResourceManager.GetObject("compra_m", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sponsor_m {
+            get {
+                object obj = ResourceManager.GetObject("sponsor_m", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
