@@ -203,7 +203,7 @@ namespace SistemaV.Presentacion
                 Application.Exit();
             }
         }
-
+        //con esto podemos pasar a la ventana de proveedores
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmProveedor frm = new FrmProveedor();
@@ -214,6 +214,14 @@ namespace SistemaV.Presentacion
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmCliente frm = new FrmCliente();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //metodo click para pasar a la ventana de compras/ingresos
+            FrmIngreso frm = new FrmIngreso();
             frm.MdiParent = this;
             frm.Show();
         }
