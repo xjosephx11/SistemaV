@@ -72,6 +72,15 @@ namespace SistemaV.Presentacion
         {
             txtBuscar.Clear();
             txtId.Clear();
+            txtCodigo.Clear();
+            txtIdProveedor.Clear();
+            txtNombreProveedor.Clear();
+            txtSerieComrpobante.Clear();
+            txtNumComprobante.Clear();
+            DtDetalle.Clear();
+            txtSubTotal.Text = "0.00";
+            txtTotalImpuesto.Text = "0.00";
+            txtTotal.Text = "0.00";
             btnInsertar.Visible = true;
             errorIcono.Clear();
 

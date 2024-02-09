@@ -74,7 +74,7 @@ namespace SistemaV.Datos
                 SqlCommand Comando = new SqlCommand("ingreso_insertar", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@idproveedor", SqlDbType.Int).Value = obj.IdPRoveedor;
-                Comando.Parameters.Add("@iddusuario", SqlDbType.Int).Value = obj.IdUsuario;
+                Comando.Parameters.Add("@idusuario", SqlDbType.Int).Value = obj.IdUsuario;
                 Comando.Parameters.Add("@tipo_comprobante", SqlDbType.VarChar).Value = obj.TipoComprobante;
                 Comando.Parameters.Add("@serie_comprobante", SqlDbType.VarChar).Value = obj.SerieComprobante;
                 Comando.Parameters.Add("@num_comprobante", SqlDbType.VarChar).Value = obj.NumComprobante;
@@ -82,7 +82,8 @@ namespace SistemaV.Datos
                 Comando.Parameters.Add("@total", SqlDbType.Decimal).Value = obj.Total;
                 Comando.Parameters.Add("@detalle", SqlDbType.Structured).Value = obj.Detalles;
                 SqlCon.Open();
-                Respuesta = Comando.ExecuteNonQuery() == 1 ? "OK" : "No se pudo ingresar el registro";
+                Comando.ExecuteNonQuery();
+                Respuesta = "OK";
             }
             catch (Exception ex)
             {
