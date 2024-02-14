@@ -9,31 +9,31 @@ using System.Threading.Tasks;
 
 namespace SistemaV.Negocio
 {
-    public class NIngreso
+    public class NVenta
     {
         public static DataTable listar() 
         {
-            DIngreso Datos = new DIngreso();
+            DVenta Datos = new DVenta();
             return Datos.listar();
         }
 
         public static DataTable Buscar(string Valor)
         {
-            DIngreso Datos = new DIngreso();
+            DVenta Datos = new DVenta();
             return Datos.Buscar(Valor);
         }
 
         public static DataTable ListarDetalle(int Id)
         {
-            DIngreso Datos = new DIngreso();
+            DVenta Datos = new DVenta();
             return Datos.ListarDetalle(Id);
         }
 
-        public static string Insertar(int IdProveedor, int IdUsuario, string Tipo_Comprobante, string SerieComprobante, string NumComprobante, decimal Impuesto, decimal Total, DataTable Detalles)
+        public static string Insertar(int IdCliente, int IdUsuario, string Tipo_Comprobante, string SerieComprobante, string NumComprobante, decimal Impuesto, decimal Total, DataTable Detalles)
         {
-            DIngreso Datos = new DIngreso();
-            Ingreso Obj = new Ingreso();
-            Obj.IdPRoveedor = IdProveedor;
+            DVenta Datos = new DVenta();
+            Venta Obj = new Venta();
+            Obj.IdCliente = IdCliente;
             Obj.IdUsuario = IdUsuario;
             Obj.TipoComprobante = Tipo_Comprobante;
             Obj.SerieComprobante= SerieComprobante;
@@ -46,7 +46,7 @@ namespace SistemaV.Negocio
 
         public static string Anular(int Id) 
         {
-            DIngreso Datos = new DIngreso();
+            DVenta Datos = new DVenta();
             return Datos.Anular(Id);
         }
     }

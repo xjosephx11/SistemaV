@@ -23,10 +23,22 @@ namespace SistemaV.Negocio
             return Datos.Buscar(Valor);
         }
 
+        public static DataTable BuscarVenta(string Valor)
+        {
+            DArticulo Datos = new DArticulo();
+            return Datos.BuscarVenta(Valor);
+        }
+
         public static DataTable BuscarCodigo(string Valor)
         {
             DArticulo Datos = new DArticulo();
             return Datos.BuscarCodigo(Valor);
+        }
+
+        public static DataTable BuscarCodigoVenta(string Valor)
+        {
+            DArticulo Datos = new DArticulo();
+            return Datos.BuscarCodigoVenta(Valor);
         }
 
 

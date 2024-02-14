@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace SistemaV.Datos
 {
+    //de aqui pasa la info a la capa de negocio
     public class DUsuario
     {
         public DataTable listar()

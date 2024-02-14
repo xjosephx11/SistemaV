@@ -11,6 +11,7 @@ namespace SistemaV.Negocio
 {
     public class NUsuario
     {
+        //de aqui va la info para la capa presentacion
         public static DataTable listar()
         {
             DUsuario Datos = new DUsuario();

@@ -9,7 +9,7 @@ using SistemaV.Entidades;
 
 namespace SistemaV.Datos
 {
-    public class DIngreso
+    public class DVenta
     {
         public DataTable listar()
         {
@@ -19,7 +19,7 @@ namespace SistemaV.Datos
             try
             {
                 SqlCon = Conexion2.getInstancia2().CrearConexion2();
-                SqlCommand Comando = new SqlCommand("ingreso_listar", SqlCon);
+                SqlCommand Comando = new SqlCommand("venta_listar", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 SqlCon.Open();
                 resultado = Comando.ExecuteReader();
@@ -45,7 +45,7 @@ namespace SistemaV.Datos
             try
             {
                 SqlCon = Conexion2.getInstancia2().CrearConexion2();
-                SqlCommand Comando = new SqlCommand("ingreso_buscar", SqlCon);
+                SqlCommand Comando = new SqlCommand("venta_buscar", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = Valor;
                 SqlCon.Open();
@@ -72,9 +72,9 @@ namespace SistemaV.Datos
             try
             {
                 SqlCon = Conexion2.getInstancia2().CrearConexion2();
-                SqlCommand Comando = new SqlCommand("ingreso_listar_detalle", SqlCon);
+                SqlCommand Comando = new SqlCommand("venta_listar_detalle", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
-                Comando.Parameters.Add("@idingreso", SqlDbType.Int).Value = Id;
+                Comando.Parameters.Add("@idventa", SqlDbType.Int).Value = Id;
                 SqlCon.Open();
                 resultado = Comando.ExecuteReader();
                 Tabla.Load(resultado);
@@ -91,16 +91,16 @@ namespace SistemaV.Datos
             }
         }
 
-        public string Insertar(Ingreso obj)
+        public string Insertar(Venta obj)
         {
             string Respuesta = "";
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon = Conexion2.getInstancia2().CrearConexion2();
-                SqlCommand Comando = new SqlCommand("ingreso_insertar", SqlCon);
+                SqlCommand Comando = new SqlCommand("venta_insertar", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
-                Comando.Parameters.Add("@idproveedor", SqlDbType.Int).Value = obj.IdPRoveedor;
+                Comando.Parameters.Add("@idcliente", SqlDbType.Int).Value = obj.IdCliente;
                 Comando.Parameters.Add("@idusuario", SqlDbType.Int).Value = obj.IdUsuario;
                 Comando.Parameters.Add("@tipo_comprobante", SqlDbType.VarChar).Value = obj.TipoComprobante;
                 Comando.Parameters.Add("@serie_comprobante", SqlDbType.VarChar).Value = obj.SerieComprobante;
@@ -130,9 +130,9 @@ namespace SistemaV.Datos
             try
             {
                 SqlCon = Conexion2.getInstancia2().CrearConexion2();
-                SqlCommand Comando = new SqlCommand("ingreso_anular", SqlCon);
+                SqlCommand Comando = new SqlCommand("venta_anular", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
-                Comando.Parameters.Add("@idingreso", SqlDbType.Int).Value = Id;
+                Comando.Parameters.Add("@idventa", SqlDbType.Int).Value = Id;
                 SqlCon.Open();
                 Comando.ExecuteNonQuery();
                 Respuesta = "OK";

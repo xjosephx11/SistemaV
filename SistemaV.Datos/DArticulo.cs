@@ -64,6 +64,33 @@ namespace SistemaV.Datos
             }
         }
 
+        public DataTable BuscarVenta(string Valor)
+        {
+            SqlDataReader resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion2.getInstancia2().CrearConexion2();
+                SqlCommand Comando = new SqlCommand("articulo_buscar_venta", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = Valor;
+                SqlCon.Open();
+                resultado = Comando.ExecuteReader();
+                Tabla.Load(resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+        }
+
         public DataTable BuscarCodigo(string Valor)
         {
             SqlDataReader resultado;
@@ -73,6 +100,33 @@ namespace SistemaV.Datos
             {
                 SqlCon = Conexion2.getInstancia2().CrearConexion2();
                 SqlCommand Comando = new SqlCommand("articulo_buscar_codigo", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = Valor;
+                SqlCon.Open();
+                resultado = Comando.ExecuteReader();
+                Tabla.Load(resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+        }
+
+        public DataTable BuscarCodigoVenta(string Valor)
+        {
+            SqlDataReader resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion2.getInstancia2().CrearConexion2();
+                SqlCommand Comando = new SqlCommand("articulo_buscar_codigo_venta", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = Valor;
                 SqlCon.Open();

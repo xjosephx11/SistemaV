@@ -8,6 +8,7 @@ namespace SistemaV.Entidades
 {
     public class Usuario
     {
+        //de aqui pasa la info a la capa de datos
         public int IdUsuario { get; set; }
         public int IdRol { get; set; }
         public string Nombre { get; set; }

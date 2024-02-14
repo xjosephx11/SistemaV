@@ -11,18 +11,19 @@ using System.Windows.Forms;
 
 namespace SistemaV.Presentacion
 {
-    public partial class FrmIngreso : Form
+    public partial class FrmVenta : Form
     {
         private DataTable DtDetalle = new DataTable();
-        public FrmIngreso()
+        public FrmVenta()
         {
             InitializeComponent();
         }
+
         private void Listar()
         {
             try
             {
-                DgvListado.DataSource = NIngreso.listar();
+                DgvListado.DataSource = NVenta.listar();
                 this.Formato();
                 this.Limpiar();
                 lblTotal.Text = "Total registros: " + Convert.ToString(DgvListado.Rows.Count);
@@ -37,7 +38,7 @@ namespace SistemaV.Presentacion
         {
             try
             {
-                DgvListado.DataSource = NIngreso.Buscar(txtBuscar.Text.Trim());
+                DgvListado.DataSource = NVenta.Buscar(txtBuscar.Text.Trim());
                 this.Formato();
                 lblTotal.Text = "Total registros: " + Convert.ToString(DgvListado.Rows.Count);
             }
@@ -73,8 +74,8 @@ namespace SistemaV.Presentacion
             txtBuscar.Clear();
             txtId.Clear();
             txtCodigo.Clear();
-            txtIdProveedor.Clear();
-            txtNombreProveedor.Clear();
+            txtIdCliente.Clear();
+            txtNombreCliente.Clear();
             txtSerieComrpobante.Clear();
             txtNumComprobante.Clear();
             DtDetalle.Clear();
@@ -98,13 +99,15 @@ namespace SistemaV.Presentacion
             MessageBox.Show(Mensaje, "Sistema de ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void CrearTabla() 
+        private void CrearTabla()
         {//agregar columnas al datatable, este metodo espera 2 parametros, el nombre de la columna y su tipo
             this.DtDetalle.Columns.Add("idarticulo", System.Type.GetType("System.Int32"));
             this.DtDetalle.Columns.Add("codigo", System.Type.GetType("System.String"));
             this.DtDetalle.Columns.Add("articulo", System.Type.GetType("System.String"));
+            this.DtDetalle.Columns.Add("stock", System.Type.GetType("System.Int32"));
             this.DtDetalle.Columns.Add("cantidad", System.Type.GetType("System.Int32"));
             this.DtDetalle.Columns.Add("precio", System.Type.GetType("System.Decimal"));
+            this.DtDetalle.Columns.Add("descuento", System.Type.GetType("System.Decimal"));
             this.DtDetalle.Columns.Add("importe", System.Type.GetType("System.Decimal"));
 
             DgvDetalle.DataSource = this.DtDetalle;//la fuente de datos del datagridview sea este
@@ -115,20 +118,25 @@ namespace SistemaV.Presentacion
             DgvDetalle.Columns[1].Width = 100;
             DgvDetalle.Columns[2].HeaderText = "Articulo";
             DgvDetalle.Columns[2].Width = 200;
-            DgvDetalle.Columns[3].HeaderText = "Cantidad";
-            DgvDetalle.Columns[3].Width = 70;
-            DgvDetalle.Columns[4].HeaderText = "Precio";
-            DgvDetalle.Columns[4].Width = 70;
-            DgvDetalle.Columns[5].HeaderText = "Importe";
-            DgvDetalle.Columns[5].Width = 80;
+            DgvDetalle.Columns[3].HeaderText = "Stock";
+            DgvDetalle.Columns[3].Width = 50;
+            DgvDetalle.Columns[4].HeaderText = "Cantidad";
+            DgvDetalle.Columns[4].Width = 50;
+            DgvDetalle.Columns[5].HeaderText = "Precio";
+            DgvDetalle.Columns[5].Width = 70;
+            DgvDetalle.Columns[6].HeaderText = "Descuento";
+            DgvDetalle.Columns[6].Width = 60;
+            DgvDetalle.Columns[7].HeaderText = "Importe";
+            DgvDetalle.Columns[7].Width = 80;
 
             //columnas de solo lectura
             DgvDetalle.Columns[1].ReadOnly = true;//codigo
             DgvDetalle.Columns[2].ReadOnly = true;//articulo
-            DgvDetalle.Columns[5].ReadOnly = true;//importe
+            DgvDetalle.Columns[3].ReadOnly = true;//stock
+            DgvDetalle.Columns[7].ReadOnly = true;//importe
         }
 
-        private void FormatoArticulos() 
+        private void FormatoArticulos()
         {//formato para listar en el datagridview los parametros de los articulos
             dgvArticulos.Columns[1].Visible = false;
             dgvArticulos.Columns[1].Width = 50;
@@ -145,7 +153,7 @@ namespace SistemaV.Presentacion
             dgvArticulos.Columns[8].Width = 100;
         }
 
-        private void FrmIngreso_Load(object sender, EventArgs e)
+        private void FrmVenta_Load(object sender, EventArgs e)
         {
             this.Listar();
             this.CrearTabla();
@@ -156,42 +164,45 @@ namespace SistemaV.Presentacion
             this.Buscar();
         }
 
-        private void btnBuscarProveedor_Click(object sender, EventArgs e)
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            FrmVista_ProveedorIngreso Vista = new FrmVista_ProveedorIngreso();
-            Vista.ShowDialog();
-            txtIdProveedor.Text = Convert.ToString(Variables.IdProveedor);
-            txtNombreProveedor.Text = Variables.NombreProveedor;
+            FrmVista_ClienteVenta vista = new FrmVista_ClienteVenta();
+            vista.ShowDialog();
+            txtIdCliente.Text = Convert.ToString( Variables.IdCliente);
+            txtNombreCliente.Text = Variables.NombreCliente;
+
         }
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
-        {//metodo para cuando apretamos la tecla enter
+        {
+            //metodo para cuando apretamos la tecla enter
             try
             {
                 if (e.KeyCode == Keys.Enter)//si la tecla apretada es ENTER
                 {
                     DataTable Tabla = new DataTable();
-                    Tabla = NArticulo.BuscarCodigo(txtCodigo.Text.Trim());
+                    Tabla = NArticulo.BuscarCodigoVenta(txtCodigo.Text.Trim());
                     if (Tabla.Rows.Count <= 0)
                     {//en caso de que no exista
-                        this.MensajeError("No existe un articulo con ese codigo.");
+                        this.MensajeError("No existe un articulo con ese codigo, o no hay stock.");
                     }
-                    else 
+                    else
                     {//en caso de que si exista, agregamos al detalle
                         this.AgregarDetalle(Convert.ToInt32(Tabla.Rows[0][0]),
-                            Convert.ToString(Tabla.Rows[0][1]), 
-                            Convert.ToString(Tabla.Rows[0][2]), 
+                            Convert.ToString(Tabla.Rows[0][1]),
+                            Convert.ToString(Tabla.Rows[0][2]),
+                            Convert.ToInt32(Tabla.Rows[0][4]),
                             Convert.ToDecimal(Tabla.Rows[0][3]));
                     }
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void AgregarDetalle(int IdArticulo, string Codigo, string Nombre, decimal Precio) 
+        private void AgregarDetalle(int IdArticulo, string Codigo, string Nombre,int Stock, decimal Precio)
         {
             bool Agregar = true;
             foreach (DataRow FilaTemp in DtDetalle.Rows)//recorrer todos los detalles que ya tenemos, y verificamos si el articulo ya se encuentra agregado
@@ -208,8 +219,10 @@ namespace SistemaV.Presentacion
                 Fila["idarticulo"] = IdArticulo;
                 Fila["codigo"] = Codigo;
                 Fila["articulo"] = Nombre;
+                Fila["stock"] = Stock;
                 Fila["cantidad"] = 1;
                 Fila["precio"] = Precio;
+                Fila["descuento"] = 0;
                 Fila["importe"] = Precio;
                 this.DtDetalle.Rows.Add(Fila);
                 this.CalcularTotales();
@@ -224,7 +237,7 @@ namespace SistemaV.Presentacion
             {
                 Total = 0;
             }
-            else 
+            else
             {
                 foreach (DataRow Filatem in DtDetalle.Rows)//recorrer todos los articulos agregados al detalle
                 {
@@ -236,6 +249,7 @@ namespace SistemaV.Presentacion
             txtSubTotal.Text = SubTotal.ToString("#0.00#");
             txtTotalImpuesto.Text = (Total - SubTotal).ToString("#0.00#");
         }
+
         private void btnVerArticulos_Click(object sender, EventArgs e)
         {
             panelArticulos.Visible = true;
@@ -251,7 +265,7 @@ namespace SistemaV.Presentacion
             try
             {
                 //de la fuente de datos de la clase narticulo su metodo buscar, cargar la informacion a mi dgvarticulos
-                dgvArticulos.DataSource = NArticulo.BuscarVenta(txtBuscarArticulo.Text.Trim());
+                dgvArticulos.DataSource = NArticulo.Buscar(txtBuscarArticulo.Text.Trim());
                 this.FormatoArticulos();
                 lblTotalArticulos.Text = "Total Registros :" + Convert.ToString(dgvArticulos.Rows.Count);
             }
@@ -267,156 +281,13 @@ namespace SistemaV.Presentacion
             int IdArticulo;
             string Codigo, Nombre;
             decimal Precio;
+            int Stock;
             IdArticulo = Convert.ToInt32(dgvArticulos.CurrentRow.Cells["ID"].Value);
             Codigo = Convert.ToString(dgvArticulos.CurrentRow.Cells["Codigo"].Value);
             Nombre = Convert.ToString(dgvArticulos.CurrentRow.Cells["Nombre"].Value);
+            Stock = Convert.ToInt32(dgvArticulos.CurrentRow.Cells["Stock"].Value);
             Precio = Convert.ToDecimal(dgvArticulos.CurrentRow.Cells["Precio_Venta"].Value);
-            this.AgregarDetalle(IdArticulo,Codigo,Nombre,Precio);
-        }
-
-        private void DgvDetalle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            //capturamos la fila de la celda que modificamos (precio o cantidad)
-            DataRow Fila = (DataRow)DtDetalle.Rows[e.RowIndex];
-            decimal Precio = Convert.ToDecimal(Fila["precio"]);
-            int Cantidad = Convert.ToInt32(Fila["cantidad"]);
-            Fila["importe"] = Precio * Cantidad;
-            this.CalcularTotales();
-        }
-
-        private void DgvDetalle_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            this.CalcularTotales();
-        }
-
-        private void btnInsertar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string respuesta = "";
-                if (txtIdProveedor.Text == string.Empty || txtImpuesto.Text == string.Empty || txtNumComprobante.Text == string.Empty || DtDetalle.Rows.Count == 0)
-                {
-                    this.MensajeError("Falta ingresar algunos datos, seran remarcados.");
-                    errorIcono.SetError(txtIdProveedor, "Seleccione un proveedor");
-                    errorIcono.SetError(txtImpuesto, "Digite un impuesto");
-                    errorIcono.SetError(txtNumComprobante, "Ingrese el numero del comprobante");
-                    errorIcono.SetError(DgvDetalle, "Debe tener al menos un detalle.");
-                }
-                else
-                {
-                    respuesta = NIngreso.Insertar(Convert.ToInt32(txtIdProveedor.Text),Variables.IdUsuario,cboComprobante.Text,txtSerieComrpobante.Text.Trim(),txtNumComprobante.Text.Trim(),Convert.ToDecimal(txtImpuesto.Text),Convert.ToDecimal(txtTotal.Text),DtDetalle);
-                    if (respuesta.Equals("OK"))
-                    {
-                        this.MensajeOk("Registro almacenado correctamente.");
-                        this.Limpiar();
-                        this.Listar();
-                    }
-                    else
-                    {
-                        this.MensajeError(respuesta);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
-        private void DgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                //la fuente de poder(datos) vienen de Ningreso, con la funcion listar detalle
-                DgvMostrarDetalle.DataSource = NIngreso.ListarDetalle(Convert.ToInt32(DgvListado.CurrentRow.Cells["ID"].Value));
-                decimal Total, SubTotal;
-                //impuesto es = a la celda seleccionada de la columna impuesto
-                decimal Impuesto = Convert.ToDecimal(DgvListado.CurrentRow.Cells["Impuesto"].Value);
-                Total = Convert.ToDecimal(DgvListado.CurrentRow.Cells["Total"].Value);
-                SubTotal = Total / (1 + Impuesto);
-                txtSubTotalD.Text = SubTotal.ToString("#0.00#");
-                txtTotalImpuestoD.Text = (Total - SubTotal).ToString("#0.00#");
-                txtTotalD.Text = Total.ToString("#0.00#");
-                PanelMostrar.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnCerrarDetalle_Click(object sender, EventArgs e)
-        {
-            PanelMostrar.Visible = false;
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Limpiar();
-            tabGeneral.SelectedIndex = 0;
-        }
-
-        private void DgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == DgvListado.Columns["Seleccionar"].Index)
-            {
-                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)DgvListado.Rows[e.RowIndex].Cells["Seleccionar"];
-                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
-            }
-        }
-
-        private void chkSeleccionar_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkSeleccionar.Checked)
-            {
-                DgvListado.Columns[0].Visible = true;
-                btnAnular.Visible = true;
-            }
-            else
-            {
-                DgvListado.Columns[0].Visible = false;
-                btnAnular.Visible = false;
-            }
-        }
-
-        private void btnAnular_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult Opcion;
-                Opcion = MessageBox.Show("¿Desea anular el/los registro?", "Sistema de Ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (Opcion == DialogResult.OK)
-                {
-                    int Codigo;
-                    string Respuesta = "";
-                    foreach (DataGridViewRow row in DgvListado.Rows)
-                    {
-                        if (Convert.ToBoolean(row.Cells[0].Value))
-                        {
-                            Codigo = Convert.ToInt32(row.Cells[1].Value);
-                            Respuesta = NIngreso.Anular(Codigo);
-                            if (Respuesta.Equals("OK"))
-                            {
-                                this.MensajeOk("Registro " + Convert.ToString(row.Cells[6].Value) + "-" + Convert.ToString(row.Cells[7].Value) + " anulado correctamente");
-                            }
-                            else
-                            {
-                                this.MensajeError(Respuesta);
-                            }
-                        }
-                    }
-                    this.Listar();
-                }
-                else
-                {
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
+            this.AgregarDetalle(IdArticulo, Codigo, Nombre,Stock, Precio);
         }
     }
 }
