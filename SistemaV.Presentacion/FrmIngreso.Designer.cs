@@ -35,6 +35,7 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panelArticulos = new System.Windows.Forms.Panel();
             this.lblTotalArticulos = new System.Windows.Forms.Label();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
@@ -42,7 +43,6 @@
             this.btnFiltrarArticulos = new System.Windows.Forms.Button();
             this.txtBuscarArticulo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtTotalImpuesto = new System.Windows.Forms.TextBox();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
@@ -86,9 +86,9 @@
             this.tabGeneral = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panelArticulos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetalle)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListado)).BeginInit();
@@ -152,6 +152,27 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.panelArticulos);
+            this.groupBox2.Controls.Add(this.txtTotal);
+            this.groupBox2.Controls.Add(this.txtTotalImpuesto);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtSubTotal);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.DgvDetalle);
+            this.groupBox2.Controls.Add(this.btnVerArticulos);
+            this.groupBox2.Controls.Add(this.txtCodigo);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(6, 144);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(643, 355);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Detalle";
             // 
             // panelArticulos
             // 
@@ -228,27 +249,6 @@
             this.label11.Size = new System.Drawing.Size(40, 13);
             this.label11.TabIndex = 0;
             this.label11.Text = "Buscar";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.panelArticulos);
-            this.groupBox2.Controls.Add(this.txtTotal);
-            this.groupBox2.Controls.Add(this.txtTotalImpuesto);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtSubTotal);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.DgvDetalle);
-            this.groupBox2.Controls.Add(this.btnVerArticulos);
-            this.groupBox2.Controls.Add(this.txtCodigo);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(6, 144);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(643, 355);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detalle";
             // 
             // txtTotal
             // 
@@ -567,7 +567,7 @@
             this.PanelMostrar.Controls.Add(this.label12);
             this.PanelMostrar.Controls.Add(this.btnCerrarDetalle);
             this.PanelMostrar.Controls.Add(this.DgvMostrarDetalle);
-            this.PanelMostrar.Location = new System.Drawing.Point(33, 148);
+            this.PanelMostrar.Location = new System.Drawing.Point(7, 44);
             this.PanelMostrar.Name = "PanelMostrar";
             this.PanelMostrar.Size = new System.Drawing.Size(724, 362);
             this.PanelMostrar.TabIndex = 7;
@@ -669,11 +669,11 @@
             this.Load += new System.EventHandler(this.FrmIngreso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.panelArticulos.ResumeLayout(false);
             this.panelArticulos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetalle)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

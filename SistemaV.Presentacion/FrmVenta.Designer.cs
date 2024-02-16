@@ -109,16 +109,16 @@
             // 
             // txtImpuesto
             // 
-            this.txtImpuesto.Location = new System.Drawing.Point(521, 83);
+            this.txtImpuesto.Location = new System.Drawing.Point(626, 82);
             this.txtImpuesto.Name = "txtImpuesto";
-            this.txtImpuesto.Size = new System.Drawing.Size(100, 20);
+            this.txtImpuesto.Size = new System.Drawing.Size(118, 20);
             this.txtImpuesto.TabIndex = 12;
             this.txtImpuesto.Text = "0.13";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(446, 86);
+            this.label6.Location = new System.Drawing.Point(551, 85);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 11;
@@ -129,11 +129,11 @@
             this.DgvMostrarDetalle.AllowUserToAddRows = false;
             this.DgvMostrarDetalle.AllowUserToDeleteRows = false;
             this.DgvMostrarDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMostrarDetalle.Location = new System.Drawing.Point(4, 57);
+            this.DgvMostrarDetalle.Location = new System.Drawing.Point(12, 57);
             this.DgvMostrarDetalle.Name = "DgvMostrarDetalle";
             this.DgvMostrarDetalle.ReadOnly = true;
             this.DgvMostrarDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvMostrarDetalle.Size = new System.Drawing.Size(717, 211);
+            this.DgvMostrarDetalle.Size = new System.Drawing.Size(719, 211);
             this.DgvMostrarDetalle.TabIndex = 0;
             // 
             // Seleccionar
@@ -153,9 +153,9 @@
             this.PanelMostrar.Controls.Add(this.label12);
             this.PanelMostrar.Controls.Add(this.btnCerrarDetalle);
             this.PanelMostrar.Controls.Add(this.DgvMostrarDetalle);
-            this.PanelMostrar.Location = new System.Drawing.Point(33, 148);
+            this.PanelMostrar.Location = new System.Drawing.Point(95, 58);
             this.PanelMostrar.Name = "PanelMostrar";
-            this.PanelMostrar.Size = new System.Drawing.Size(724, 362);
+            this.PanelMostrar.Size = new System.Drawing.Size(747, 362);
             this.PanelMostrar.TabIndex = 7;
             this.PanelMostrar.Visible = false;
             // 
@@ -219,6 +219,7 @@
             this.btnCerrarDetalle.TabIndex = 1;
             this.btnCerrarDetalle.Text = "Cerrar";
             this.btnCerrarDetalle.UseVisualStyleBackColor = true;
+            this.btnCerrarDetalle.Click += new System.EventHandler(this.btnCerrarDetalle_Click);
             // 
             // btnAnular
             // 
@@ -228,6 +229,7 @@
             this.btnAnular.TabIndex = 6;
             this.btnAnular.Text = "Anular";
             this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // chkSeleccionar
             // 
@@ -238,6 +240,7 @@
             this.chkSeleccionar.TabIndex = 4;
             this.chkSeleccionar.Text = "Seleccionar";
             this.chkSeleccionar.UseVisualStyleBackColor = true;
+            this.chkSeleccionar.CheckedChanged += new System.EventHandler(this.chkSeleccionar_CheckedChanged);
             // 
             // btnBuscar
             // 
@@ -277,8 +280,10 @@
             this.DgvListado.Name = "DgvListado";
             this.DgvListado.ReadOnly = true;
             this.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListado.Size = new System.Drawing.Size(951, 347);
+            this.DgvListado.Size = new System.Drawing.Size(928, 347);
             this.DgvListado.TabIndex = 0;
+            this.DgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellContentClick);
+            this.DgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellDoubleClick);
             // 
             // tabPage1
             // 
@@ -292,7 +297,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(963, 547);
+            this.tabPage1.Size = new System.Drawing.Size(937, 547);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -314,7 +319,7 @@
             this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(643, 117);
+            this.groupBox1.Size = new System.Drawing.Size(925, 117);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cabecera";
@@ -322,7 +327,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(358, 65);
+            this.label5.Location = new System.Drawing.Point(449, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 10;
@@ -331,7 +336,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(257, 65);
+            this.label4.Location = new System.Drawing.Point(315, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 9;
@@ -347,29 +352,29 @@
             "GUIA"});
             this.cboComprobante.Location = new System.Drawing.Point(97, 82);
             this.cboComprobante.Name = "cboComprobante";
-            this.cboComprobante.Size = new System.Drawing.Size(121, 21);
+            this.cboComprobante.Size = new System.Drawing.Size(154, 21);
             this.cboComprobante.TabIndex = 8;
             this.cboComprobante.Text = "FACTURA";
             // 
             // txtNumComprobante
             // 
-            this.txtNumComprobante.Location = new System.Drawing.Point(330, 83);
+            this.txtNumComprobante.Location = new System.Drawing.Point(411, 83);
             this.txtNumComprobante.Name = "txtNumComprobante";
-            this.txtNumComprobante.Size = new System.Drawing.Size(100, 20);
+            this.txtNumComprobante.Size = new System.Drawing.Size(134, 20);
             this.txtNumComprobante.TabIndex = 7;
             // 
             // txtSerieComrpobante
             // 
-            this.txtSerieComrpobante.Location = new System.Drawing.Point(224, 84);
+            this.txtSerieComrpobante.Location = new System.Drawing.Point(266, 83);
             this.txtSerieComrpobante.Name = "txtSerieComrpobante";
-            this.txtSerieComrpobante.Size = new System.Drawing.Size(100, 20);
+            this.txtSerieComrpobante.Size = new System.Drawing.Size(127, 20);
             this.txtSerieComrpobante.TabIndex = 6;
             // 
             // btnBuscarCliente
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(437, 31);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(473, 31);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(121, 23);
             this.btnBuscarCliente.TabIndex = 5;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
@@ -378,7 +383,7 @@
             // txtNombreCliente
             // 
             this.txtNombreCliente.Enabled = false;
-            this.txtNombreCliente.Location = new System.Drawing.Point(210, 33);
+            this.txtNombreCliente.Location = new System.Drawing.Point(224, 33);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(220, 20);
             this.txtNombreCliente.TabIndex = 3;
@@ -411,9 +416,9 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(521, 10);
+            this.txtId.Location = new System.Drawing.Point(626, 10);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.Size = new System.Drawing.Size(118, 20);
             this.txtId.TabIndex = 4;
             this.txtId.Visible = false;
             // 
@@ -424,7 +429,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(12, 12);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(971, 573);
+            this.tabGeneral.Size = new System.Drawing.Size(945, 573);
             this.tabGeneral.TabIndex = 2;
             // 
             // tabPage2
@@ -436,7 +441,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(963, 547);
+            this.tabPage2.Size = new System.Drawing.Size(937, 547);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -457,7 +462,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(6, 144);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(643, 355);
+            this.groupBox2.Size = new System.Drawing.Size(925, 355);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle";
@@ -471,9 +476,9 @@
             this.panelArticulos.Controls.Add(this.btnFiltrarArticulos);
             this.panelArticulos.Controls.Add(this.txtBuscarArticulo);
             this.panelArticulos.Controls.Add(this.label11);
-            this.panelArticulos.Location = new System.Drawing.Point(22, 216);
+            this.panelArticulos.Location = new System.Drawing.Point(64, 66);
             this.panelArticulos.Name = "panelArticulos";
-            this.panelArticulos.Size = new System.Drawing.Size(621, 257);
+            this.panelArticulos.Size = new System.Drawing.Size(670, 257);
             this.panelArticulos.TabIndex = 10;
             this.panelArticulos.Visible = false;
             // 
@@ -496,7 +501,7 @@
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(584, 124);
+            this.dgvArticulos.Size = new System.Drawing.Size(636, 124);
             this.dgvArticulos.TabIndex = 4;
             this.dgvArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellDoubleClick);
             // 
@@ -541,7 +546,7 @@
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(526, 329);
+            this.txtTotal.Location = new System.Drawing.Point(651, 325);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 9;
@@ -549,7 +554,7 @@
             // txtTotalImpuesto
             // 
             this.txtTotalImpuesto.Enabled = false;
-            this.txtTotalImpuesto.Location = new System.Drawing.Point(526, 299);
+            this.txtTotalImpuesto.Location = new System.Drawing.Point(651, 298);
             this.txtTotalImpuesto.Name = "txtTotalImpuesto";
             this.txtTotalImpuesto.Size = new System.Drawing.Size(100, 20);
             this.txtTotalImpuesto.TabIndex = 8;
@@ -566,7 +571,7 @@
             // txtSubTotal
             // 
             this.txtSubTotal.Enabled = false;
-            this.txtSubTotal.Location = new System.Drawing.Point(526, 272);
+            this.txtSubTotal.Location = new System.Drawing.Point(651, 272);
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.Size = new System.Drawing.Size(100, 20);
             this.txtSubTotal.TabIndex = 7;
@@ -574,7 +579,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(437, 332);
+            this.label10.Location = new System.Drawing.Point(608, 328);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 13);
             this.label10.TabIndex = 6;
@@ -583,7 +588,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(437, 302);
+            this.label9.Location = new System.Drawing.Point(562, 301);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 13);
             this.label9.TabIndex = 5;
@@ -592,7 +597,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(437, 279);
+            this.label8.Location = new System.Drawing.Point(589, 275);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 13);
             this.label8.TabIndex = 4;
@@ -605,8 +610,9 @@
             this.DgvDetalle.Location = new System.Drawing.Point(10, 84);
             this.DgvDetalle.Name = "DgvDetalle";
             this.DgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvDetalle.Size = new System.Drawing.Size(613, 182);
+            this.DgvDetalle.Size = new System.Drawing.Size(741, 182);
             this.DgvDetalle.TabIndex = 3;
+            this.DgvDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDetalle_CellEndEdit);
             // 
             // btnVerArticulos
             // 
@@ -628,21 +634,23 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(286, 505);
+            this.btnCancelar.Location = new System.Drawing.Point(373, 505);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(122, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(166, 23);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(143, 505);
+            this.btnInsertar.Location = new System.Drawing.Point(166, 505);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(114, 23);
+            this.btnInsertar.Size = new System.Drawing.Size(164, 23);
             this.btnInsertar.TabIndex = 5;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // errorIcono
             // 
@@ -653,7 +661,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(995, 590);
+            this.ClientSize = new System.Drawing.Size(969, 590);
             this.Controls.Add(this.tabGeneral);
             this.Name = "FrmVenta";
             this.Text = "Ventas";

@@ -289,5 +289,153 @@ namespace SistemaV.Presentacion
             Precio = Convert.ToDecimal(dgvArticulos.CurrentRow.Cells["Precio_Venta"].Value);
             this.AgregarDetalle(IdArticulo, Codigo, Nombre,Stock, Precio);
         }
+
+        private void DgvDetalle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataRow Fila = (DataRow)DtDetalle.Rows[e.RowIndex];
+            string Articulo = Convert.ToString(Fila["articulo"]);
+            int Cantidad = Convert.ToInt32(Fila["cantidad"]);
+            int Stock = Convert.ToInt32(Fila["stock"]);
+            decimal Precio = Convert.ToDecimal(Fila["precio"]);
+            decimal Descuento = Convert.ToDecimal(Fila["descuento"]);
+            if (Cantidad > Stock)
+            {
+                Cantidad = Stock;
+                this.MensajeError("La cantidad de venta del articulo " + Articulo + " supera el stock disponible ->" + Stock);
+                Fila["cantidad"] = Cantidad;
+            }
+            Fila["importe"] = (Precio * Cantidad) - Descuento;
+            this.CalcularTotales();
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string respuesta = "";
+                if (txtIdCliente.Text == string.Empty || txtImpuesto.Text == string.Empty || txtNumComprobante.Text == string.Empty || DtDetalle.Rows.Count == 0)
+                {
+                    this.MensajeError("Falta ingresar algunos datos, seran remarcados.");
+                    errorIcono.SetError(txtIdCliente, "Seleccione un cliente");
+                    errorIcono.SetError(txtImpuesto, "Digite un impuesto");
+                    errorIcono.SetError(txtNumComprobante, "Ingrese el numero del comprobante");
+                    errorIcono.SetError(DgvDetalle, "Debe tener al menos un detalle.");
+                }
+                else
+                {
+                    respuesta = NVenta.Insertar(Convert.ToInt32(txtIdCliente.Text), Variables.IdUsuario, cboComprobante.Text, txtSerieComrpobante.Text.Trim(), txtNumComprobante.Text.Trim(), Convert.ToDecimal(txtImpuesto.Text), Convert.ToDecimal(txtTotal.Text), DtDetalle);
+                    if (respuesta.Equals("OK"))
+                    {
+                        this.MensajeOk("Registro almacenado correctamente.");
+                        this.Limpiar();
+                        this.Listar();
+                    }
+                    else
+                    {
+                        this.MensajeError(respuesta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Limpiar();
+            tabGeneral.SelectedIndex = 0;
+        }
+
+        private void DgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //la fuente de poder(datos) vienen de Ningreso, con la funcion listar detalle
+                DgvMostrarDetalle.DataSource = NVenta.ListarDetalle(Convert.ToInt32(DgvListado.CurrentRow.Cells["ID"].Value));
+                decimal Total, SubTotal;
+                //impuesto es = a la celda seleccionada de la columna impuesto
+                decimal Impuesto = Convert.ToDecimal(DgvListado.CurrentRow.Cells["Impuesto"].Value);
+                Total = Convert.ToDecimal(DgvListado.CurrentRow.Cells["Total"].Value);
+                SubTotal = Total / (1 + Impuesto);
+                txtSubTotalD.Text = SubTotal.ToString("#0.00#");
+                txtTotalImpuestoD.Text = (Total - SubTotal).ToString("#0.00#");
+                txtTotalD.Text = Total.ToString("#0.00#");
+                PanelMostrar.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCerrarDetalle_Click(object sender, EventArgs e)
+        {
+            PanelMostrar.Visible = false;
+        }
+
+        private void DgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == DgvListado.Columns["Seleccionar"].Index)
+            {
+                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)DgvListado.Rows[e.RowIndex].Cells["Seleccionar"];
+                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+            }
+        }
+
+        private void chkSeleccionar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSeleccionar.Checked)
+            {
+                DgvListado.Columns[0].Visible = true;
+                btnAnular.Visible = true;
+            }
+            else
+            {
+                DgvListado.Columns[0].Visible = false;
+                btnAnular.Visible = false;
+            }
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("¿Desea anular el/los registro?", "Sistema de Ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Opcion == DialogResult.OK)
+                {
+                    int Codigo;
+                    string Respuesta = "";
+                    foreach (DataGridViewRow row in DgvListado.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToInt32(row.Cells[1].Value);
+                            Respuesta = NVenta.Anular(Codigo);
+                            if (Respuesta.Equals("OK"))
+                            {
+                                this.MensajeOk("Registro " + Convert.ToString(row.Cells[6].Value) + "-" + Convert.ToString(row.Cells[7].Value) + " anulado correctamente");
+                            }
+                            else
+                            {
+                                this.MensajeError(Respuesta);
+                            }
+                        }
+                    }
+                    this.Listar();
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
     }
 }
