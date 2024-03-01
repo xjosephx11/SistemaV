@@ -437,5 +437,19 @@ namespace SistemaV.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void btnComprobante_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Variables.IdVenta = Convert.ToInt32(DgvListado.CurrentRow.Cells["ID"].Value);
+                Reportes.FrmReporteComprobanteVenta reporte = new Reportes.FrmReporteComprobanteVenta();
+                reporte.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
