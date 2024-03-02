@@ -72,7 +72,7 @@ namespace SistemaV.Datos
             try
             {
                 SqlCon = Conexion2.getInstancia2().CrearConexion2();
-                SqlCommand Comando = new SqlCommand("venta_Consulta_fecha", SqlCon);
+                SqlCommand Comando = new SqlCommand("venta_consulta_fechas", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = FechaInicio;
                 Comando.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = FechaFin;
