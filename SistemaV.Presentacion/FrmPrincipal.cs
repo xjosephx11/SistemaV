@@ -139,6 +139,7 @@ namespace SistemaV.Presentacion
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            //cargar la informacion segun el tipo de usuario que ingrese, asi mismo las limitaciones para que cada usuario pueda hacer unicamente ciertas funciones
             StBarraInferior.Text = "Usuario: " + this.Nombre;
             MessageBox.Show("Bienvenido: " + this.Nombre, "Sistema de venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (this.Rol.Equals("Administrador"))
@@ -195,7 +196,7 @@ namespace SistemaV.Presentacion
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {//funcion para salir del ssistema, cerrar por completo la aplicacion
             DialogResult Opcion;
             Opcion = MessageBox.Show("¿Esta seguro que desea salir del sistema?", "Sistema de Ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (Opcion == DialogResult.OK)

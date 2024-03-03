@@ -19,7 +19,7 @@ namespace SistemaV.Presentacion
         }
 
         private void Buscar()
-        {
+        {//funcion para buscar los comprobantes entre fechas
             try
             {
                 DgvListado.DataSource = NIngreso.ConsultaFechas(Convert.ToDateTime(DtpFechaInicio.Value),Convert.ToDateTime(DtpFechaFin.Value));
@@ -101,7 +101,7 @@ namespace SistemaV.Presentacion
         }
 
         private void btnComprobanteIngreso_Click(object sender, EventArgs e)
-        {
+        {//cuando damos click, jala el id del comprobnante y muestra la ventana de comprobante con los detalles
             try
             {
                 //enviamos el valor de la celda ID de la fila actual que hemos seleccionado
