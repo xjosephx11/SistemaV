@@ -239,5 +239,12 @@ namespace SistemaV.Presentacion
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void consultaComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsulta_Ingreso_Fechas frm = new FrmConsulta_Ingreso_Fechas();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

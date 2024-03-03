@@ -14,5 +14,6 @@ namespace SistemaV.Presentacion
         public static int IdCliente;
         public static string NombreCliente;
         public static int IdVenta;
+        public static int IdIngreso;
     }
 }

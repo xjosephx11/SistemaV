@@ -418,5 +418,20 @@ namespace SistemaV.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void btnComprobanteIngreso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //enviamos el valor de la celda ID de la fila actual que hemos seleccionado
+                Variables.IdIngreso = Convert.ToInt32(DgvListado.CurrentRow.Cells["ID"].Value);
+                Reportes.FrmReporteComprobanteIngreso reporte = new Reportes.FrmReporteComprobanteIngreso();
+                reporte.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

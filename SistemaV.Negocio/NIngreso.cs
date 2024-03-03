@@ -22,6 +22,11 @@ namespace SistemaV.Negocio
             DIngreso Datos = new DIngreso();
             return Datos.Buscar(Valor);
         }
+        public static DataTable ConsultaFechas(DateTime FechaInicio, DateTime FechaFin)
+        {
+            DIngreso Datos = new DIngreso();
+            return Datos.ConsultaFechas(FechaInicio,FechaFin);
+        }
 
         public static DataTable ListarDetalle(int Id)
         {

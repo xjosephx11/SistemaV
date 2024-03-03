@@ -74,6 +74,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.DgvListado = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnComprobanteIngreso = new System.Windows.Forms.Button();
             this.PanelMostrar = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.txtTotalD = new System.Windows.Forms.TextBox();
@@ -498,9 +499,9 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(383, 18);
+            this.btnBuscar.Location = new System.Drawing.Point(373, 16);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(132, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(165, 23);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -541,6 +542,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnComprobanteIngreso);
             this.tabPage1.Controls.Add(this.PanelMostrar);
             this.tabPage1.Controls.Add(this.btnAnular);
             this.tabPage1.Controls.Add(this.chkSeleccionar);
@@ -556,6 +558,16 @@
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnComprobanteIngreso
+            // 
+            this.btnComprobanteIngreso.Location = new System.Drawing.Point(571, 18);
+            this.btnComprobanteIngreso.Name = "btnComprobanteIngreso";
+            this.btnComprobanteIngreso.Size = new System.Drawing.Size(165, 23);
+            this.btnComprobanteIngreso.TabIndex = 8;
+            this.btnComprobanteIngreso.Text = "Comprobante";
+            this.btnComprobanteIngreso.UseVisualStyleBackColor = true;
+            this.btnComprobanteIngreso.Click += new System.EventHandler(this.btnComprobanteIngreso_Click);
+            // 
             // PanelMostrar
             // 
             this.PanelMostrar.BackColor = System.Drawing.Color.Gainsboro;
@@ -567,7 +579,7 @@
             this.PanelMostrar.Controls.Add(this.label12);
             this.PanelMostrar.Controls.Add(this.btnCerrarDetalle);
             this.PanelMostrar.Controls.Add(this.DgvMostrarDetalle);
-            this.PanelMostrar.Location = new System.Drawing.Point(7, 44);
+            this.PanelMostrar.Location = new System.Drawing.Point(25, 142);
             this.PanelMostrar.Name = "PanelMostrar";
             this.PanelMostrar.Size = new System.Drawing.Size(724, 362);
             this.PanelMostrar.TabIndex = 7;
@@ -745,5 +757,6 @@
         private System.Windows.Forms.Button btnCerrarDetalle;
         private System.Windows.Forms.DataGridView DgvMostrarDetalle;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnComprobanteIngreso;
     }
 }

@@ -64,6 +64,34 @@ namespace SistemaV.Datos
             }
         }
 
+        public DataTable ConsultaFechas(DateTime FechaInicio, DateTime FechaFin)
+        {
+            SqlDataReader resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion2.getInstancia2().CrearConexion2();
+                SqlCommand Comando = new SqlCommand("ingreso_consulta_fechas", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = FechaInicio;
+                Comando.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = FechaFin;
+                SqlCon.Open();
+                resultado = Comando.ExecuteReader();
+                Tabla.Load(resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+        }
+
         public DataTable ListarDetalle(int Id)
         {
             SqlDataReader resultado;
