@@ -1,3 +1,9 @@
+--crear base de datos
+create database dbsistema
+use dbsistema
+go
+
+
 --Tabla categoría
 create table categoria (
 	idcategoria integer primary key identity,

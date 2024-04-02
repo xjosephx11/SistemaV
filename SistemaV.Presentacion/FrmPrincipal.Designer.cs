@@ -90,7 +90,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1292, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1298, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -198,14 +198,14 @@
             // consultaVentasToolStripMenuItem
             // 
             this.consultaVentasToolStripMenuItem.Name = "consultaVentasToolStripMenuItem";
-            this.consultaVentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaVentasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.consultaVentasToolStripMenuItem.Text = "Consulta Ventas";
             this.consultaVentasToolStripMenuItem.Click += new System.EventHandler(this.consultaVentasToolStripMenuItem_Click);
             // 
             // consultaComprasToolStripMenuItem
             // 
             this.consultaComprasToolStripMenuItem.Name = "consultaComprasToolStripMenuItem";
-            this.consultaComprasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaComprasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.consultaComprasToolStripMenuItem.Text = "Consulta Compras";
             this.consultaComprasToolStripMenuItem.Click += new System.EventHandler(this.consultaComprasToolStripMenuItem_Click);
             // 
@@ -347,7 +347,7 @@
             this.TsVentas});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1292, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1298, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -385,7 +385,7 @@
             this.StBarraInferior});
             this.statusStrip.Location = new System.Drawing.Point(0, 718);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1292, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1298, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -399,7 +399,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 740);
+            this.BackgroundImage = global::SistemaV.Presentacion.Properties.Resources._11;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1298, 740);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
