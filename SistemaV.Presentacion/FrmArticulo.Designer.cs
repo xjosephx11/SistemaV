@@ -55,6 +55,7 @@
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDesactivar = new System.Windows.Forms.Button();
             this.btnActivar = new System.Windows.Forms.Button();
@@ -63,7 +64,6 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.DgvListado = new System.Windows.Forms.DataGridView();
-            this.btnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
@@ -80,7 +80,7 @@
             // 
             this.btnActualizar.Location = new System.Drawing.Point(159, 398);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(94, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(94, 35);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@
             // 
             this.btnCancelar.Location = new System.Drawing.Point(320, 398);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(90, 35);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             // 
             this.btnInsertar.Location = new System.Drawing.Point(159, 398);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(89, 23);
+            this.btnInsertar.Size = new System.Drawing.Size(89, 35);
             this.btnInsertar.TabIndex = 5;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(996, 453);
+            this.tabPage2.Size = new System.Drawing.Size(1316, 590);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -240,7 +240,7 @@
             // 
             this.btnCargarImagen.Location = new System.Drawing.Point(769, 41);
             this.btnCargarImagen.Name = "btnCargarImagen";
-            this.btnCargarImagen.Size = new System.Drawing.Size(101, 23);
+            this.btnCargarImagen.Size = new System.Drawing.Size(101, 36);
             this.btnCargarImagen.TabIndex = 13;
             this.btnCargarImagen.Text = "Subir Imagen";
             this.btnCargarImagen.UseVisualStyleBackColor = true;
@@ -302,7 +302,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(12, 12);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(1004, 479);
+            this.tabGeneral.Size = new System.Drawing.Size(1324, 616);
             this.tabGeneral.TabIndex = 1;
             // 
             // tabPage1
@@ -319,16 +319,26 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(996, 453);
+            this.tabPage1.Size = new System.Drawing.Size(1316, 590);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnReporte
+            // 
+            this.btnReporte.Location = new System.Drawing.Point(683, 11);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(207, 32);
+            this.btnReporte.TabIndex = 8;
+            this.btnReporte.Text = "Reporte";
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(357, 413);
+            this.btnEliminar.Location = new System.Drawing.Point(435, 532);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(99, 39);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -336,9 +346,9 @@
             // 
             // btnDesactivar
             // 
-            this.btnDesactivar.Location = new System.Drawing.Point(251, 413);
+            this.btnDesactivar.Location = new System.Drawing.Point(287, 532);
             this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(75, 23);
+            this.btnDesactivar.Size = new System.Drawing.Size(87, 39);
             this.btnDesactivar.TabIndex = 6;
             this.btnDesactivar.Text = "Desactivar";
             this.btnDesactivar.UseVisualStyleBackColor = true;
@@ -346,9 +356,9 @@
             // 
             // btnActivar
             // 
-            this.btnActivar.Location = new System.Drawing.Point(145, 413);
+            this.btnActivar.Location = new System.Drawing.Point(148, 532);
             this.btnActivar.Name = "btnActivar";
-            this.btnActivar.Size = new System.Drawing.Size(75, 23);
+            this.btnActivar.Size = new System.Drawing.Size(88, 39);
             this.btnActivar.TabIndex = 5;
             this.btnActivar.Text = "Activar";
             this.btnActivar.UseVisualStyleBackColor = true;
@@ -357,7 +367,7 @@
             // chkSeleccionar
             // 
             this.chkSeleccionar.AutoSize = true;
-            this.chkSeleccionar.Location = new System.Drawing.Point(7, 413);
+            this.chkSeleccionar.Location = new System.Drawing.Point(10, 532);
             this.chkSeleccionar.Name = "chkSeleccionar";
             this.chkSeleccionar.Size = new System.Drawing.Size(82, 17);
             this.chkSeleccionar.TabIndex = 4;
@@ -367,9 +377,9 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(383, 18);
+            this.btnBuscar.Location = new System.Drawing.Point(463, 11);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(132, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(183, 32);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -379,13 +389,13 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(6, 18);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(352, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(429, 20);
             this.txtBuscar.TabIndex = 2;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(895, 414);
+            this.lblTotal.Location = new System.Drawing.Point(898, 533);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 1;
@@ -403,27 +413,17 @@
             this.DgvListado.Name = "DgvListado";
             this.DgvListado.ReadOnly = true;
             this.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListado.Size = new System.Drawing.Size(1042, 347);
+            this.DgvListado.Size = new System.Drawing.Size(1291, 452);
             this.DgvListado.TabIndex = 0;
             this.DgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellContentClick);
             this.DgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellDoubleClick);
-            // 
-            // btnReporte
-            // 
-            this.btnReporte.Location = new System.Drawing.Point(540, 18);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(137, 23);
-            this.btnReporte.TabIndex = 8;
-            this.btnReporte.Text = "Reporte";
-            this.btnReporte.UseVisualStyleBackColor = true;
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // FrmArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1028, 501);
+            this.ClientSize = new System.Drawing.Size(1348, 640);
             this.Controls.Add(this.tabGeneral);
             this.Name = "FrmArticulo";
             this.Text = "Articulos";

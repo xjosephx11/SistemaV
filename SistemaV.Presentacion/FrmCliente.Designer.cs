@@ -71,7 +71,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(3, 3);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(853, 480);
+            this.tabGeneral.Size = new System.Drawing.Size(1223, 589);
             this.tabGeneral.TabIndex = 2;
             // 
             // tabPage1
@@ -85,16 +85,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(845, 454);
+            this.tabPage1.Size = new System.Drawing.Size(1215, 563);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(357, 413);
+            this.btnEliminar.Location = new System.Drawing.Point(359, 499);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(117, 36);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // chkSeleccionar
             // 
             this.chkSeleccionar.AutoSize = true;
-            this.chkSeleccionar.Location = new System.Drawing.Point(7, 413);
+            this.chkSeleccionar.Location = new System.Drawing.Point(9, 499);
             this.chkSeleccionar.Name = "chkSeleccionar";
             this.chkSeleccionar.Size = new System.Drawing.Size(82, 17);
             this.chkSeleccionar.TabIndex = 4;
@@ -113,9 +113,9 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(383, 18);
+            this.btnBuscar.Location = new System.Drawing.Point(392, 11);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(132, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(217, 32);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(500, 409);
+            this.lblTotal.Location = new System.Drawing.Point(647, 499);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 1;
@@ -149,7 +149,7 @@
             this.DgvListado.Name = "DgvListado";
             this.DgvListado.ReadOnly = true;
             this.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListado.Size = new System.Drawing.Size(833, 347);
+            this.DgvListado.Size = new System.Drawing.Size(1203, 347);
             this.DgvListado.TabIndex = 0;
             this.DgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellContentClick);
             this.DgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellDoubleClick);
@@ -182,7 +182,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(845, 454);
+            this.tabPage2.Size = new System.Drawing.Size(1215, 563);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -269,7 +269,7 @@
             // 
             this.btnActualizar.Location = new System.Drawing.Point(155, 405);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(102, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(102, 40);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -288,7 +288,7 @@
             // 
             this.btnCancelar.Location = new System.Drawing.Point(310, 405);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(94, 40);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -296,9 +296,9 @@
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(168, 405);
+            this.btnInsertar.Location = new System.Drawing.Point(155, 405);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(89, 23);
+            this.btnInsertar.Size = new System.Drawing.Size(102, 40);
             this.btnInsertar.TabIndex = 5;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -317,7 +317,7 @@
             this.txtNombre.Location = new System.Drawing.Point(187, 61);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(223, 20);
+            this.txtNombre.Size = new System.Drawing.Size(223, 26);
             this.txtNombre.TabIndex = 2;
             // 
             // label2
@@ -347,7 +347,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(862, 490);
+            this.ClientSize = new System.Drawing.Size(1238, 604);
             this.Controls.Add(this.tabGeneral);
             this.Name = "FrmCliente";
             this.Text = "Clientes";

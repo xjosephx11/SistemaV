@@ -79,9 +79,9 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(145, 405);
+            this.btnActualizar.Location = new System.Drawing.Point(147, 395);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(102, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(102, 33);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -98,9 +98,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(310, 405);
+            this.btnCancelar.Location = new System.Drawing.Point(310, 395);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(94, 33);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -108,9 +108,9 @@
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(145, 405);
+            this.btnInsertar.Location = new System.Drawing.Point(147, 395);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(89, 23);
+            this.btnInsertar.Size = new System.Drawing.Size(99, 33);
             this.btnInsertar.TabIndex = 5;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -164,7 +164,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(845, 454);
+            this.tabPage2.Size = new System.Drawing.Size(1148, 541);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(457, 55);
+            this.groupBox1.Location = new System.Drawing.Point(623, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(368, 268);
             this.groupBox1.TabIndex = 18;
@@ -321,9 +321,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(357, 413);
+            this.btnEliminar.Location = new System.Drawing.Point(667, 491);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(114, 31);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -331,9 +331,9 @@
             // 
             // btnDesactivar
             // 
-            this.btnDesactivar.Location = new System.Drawing.Point(251, 413);
+            this.btnDesactivar.Location = new System.Drawing.Point(480, 491);
             this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(75, 23);
+            this.btnDesactivar.Size = new System.Drawing.Size(114, 31);
             this.btnDesactivar.TabIndex = 6;
             this.btnDesactivar.Text = "Desactivar";
             this.btnDesactivar.UseVisualStyleBackColor = true;
@@ -341,9 +341,9 @@
             // 
             // btnActivar
             // 
-            this.btnActivar.Location = new System.Drawing.Point(145, 413);
+            this.btnActivar.Location = new System.Drawing.Point(318, 491);
             this.btnActivar.Name = "btnActivar";
-            this.btnActivar.Size = new System.Drawing.Size(75, 23);
+            this.btnActivar.Size = new System.Drawing.Size(114, 32);
             this.btnActivar.TabIndex = 5;
             this.btnActivar.Text = "Activar";
             this.btnActivar.UseVisualStyleBackColor = true;
@@ -352,7 +352,7 @@
             // chkSeleccionar
             // 
             this.chkSeleccionar.AutoSize = true;
-            this.chkSeleccionar.Location = new System.Drawing.Point(7, 413);
+            this.chkSeleccionar.Location = new System.Drawing.Point(13, 492);
             this.chkSeleccionar.Name = "chkSeleccionar";
             this.chkSeleccionar.Size = new System.Drawing.Size(82, 17);
             this.chkSeleccionar.TabIndex = 4;
@@ -362,9 +362,9 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(383, 18);
+            this.btnBuscar.Location = new System.Drawing.Point(384, 11);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(132, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(132, 32);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -380,7 +380,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(500, 409);
+            this.lblTotal.Location = new System.Drawing.Point(952, 491);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 1;
@@ -398,7 +398,7 @@
             this.DgvListado.Name = "DgvListado";
             this.DgvListado.ReadOnly = true;
             this.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListado.Size = new System.Drawing.Size(833, 347);
+            this.DgvListado.Size = new System.Drawing.Size(1136, 412);
             this.DgvListado.TabIndex = 0;
             this.DgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellContentClick);
             this.DgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellDoubleClick);
@@ -416,7 +416,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(845, 454);
+            this.tabPage1.Size = new System.Drawing.Size(1148, 541);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -428,7 +428,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(12, 12);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(853, 480);
+            this.tabGeneral.Size = new System.Drawing.Size(1156, 567);
             this.tabGeneral.TabIndex = 1;
             // 
             // FrmUsuario
@@ -436,7 +436,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(877, 504);
+            this.ClientSize = new System.Drawing.Size(1173, 585);
             this.Controls.Add(this.tabGeneral);
             this.Name = "FrmUsuario";
             this.Text = "Usuarios";

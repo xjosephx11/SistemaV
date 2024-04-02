@@ -110,7 +110,7 @@
             // 
             this.btnIngresar.Location = new System.Drawing.Point(45, 215);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(104, 23);
+            this.btnIngresar.Size = new System.Drawing.Size(121, 30);
             this.btnIngresar.TabIndex = 7;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -118,9 +118,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(196, 215);
+            this.btnCancelar.Location = new System.Drawing.Point(209, 215);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(121, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(121, 30);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(451, 253);
+            this.ClientSize = new System.Drawing.Size(452, 294);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.pictureBox2);

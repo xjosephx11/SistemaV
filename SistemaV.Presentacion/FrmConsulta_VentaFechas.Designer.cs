@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.DtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.btnComprobante = new System.Windows.Forms.Button();
             this.PanelMostrar = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -46,10 +50,6 @@
             this.DgvListado = new System.Windows.Forms.DataGridView();
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.DtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.DtpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabGeneral.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.PanelMostrar.SuspendLayout();
@@ -64,7 +64,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(6, 5);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(945, 573);
+            this.tabGeneral.Size = new System.Drawing.Size(1304, 573);
             this.tabGeneral.TabIndex = 3;
             // 
             // tabPage1
@@ -81,16 +81,50 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(937, 547);
+            this.tabPage1.Size = new System.Drawing.Size(1296, 547);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(228, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Hasta:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Desde:";
+            // 
+            // DtpFechaFin
+            // 
+            this.DtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaFin.Location = new System.Drawing.Point(272, 17);
+            this.DtpFechaFin.Name = "DtpFechaFin";
+            this.DtpFechaFin.Size = new System.Drawing.Size(111, 20);
+            this.DtpFechaFin.TabIndex = 10;
+            // 
+            // DtpFechaInicio
+            // 
+            this.DtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaInicio.Location = new System.Drawing.Point(67, 17);
+            this.DtpFechaInicio.Name = "DtpFechaInicio";
+            this.DtpFechaInicio.Size = new System.Drawing.Size(106, 20);
+            this.DtpFechaInicio.TabIndex = 9;
+            // 
             // btnComprobante
             // 
-            this.btnComprobante.Location = new System.Drawing.Point(583, 17);
+            this.btnComprobante.Location = new System.Drawing.Point(586, 9);
             this.btnComprobante.Name = "btnComprobante";
-            this.btnComprobante.Size = new System.Drawing.Size(139, 23);
+            this.btnComprobante.Size = new System.Drawing.Size(139, 28);
             this.btnComprobante.TabIndex = 8;
             this.btnComprobante.Text = "Comprobante";
             this.btnComprobante.UseVisualStyleBackColor = true;
@@ -107,9 +141,9 @@
             this.PanelMostrar.Controls.Add(this.label12);
             this.PanelMostrar.Controls.Add(this.btnCerrarDetalle);
             this.PanelMostrar.Controls.Add(this.DgvMostrarDetalle);
-            this.PanelMostrar.Location = new System.Drawing.Point(20, 163);
+            this.PanelMostrar.Location = new System.Drawing.Point(67, 179);
             this.PanelMostrar.Name = "PanelMostrar";
-            this.PanelMostrar.Size = new System.Drawing.Size(747, 362);
+            this.PanelMostrar.Size = new System.Drawing.Size(950, 362);
             this.PanelMostrar.TabIndex = 7;
             this.PanelMostrar.Visible = false;
             // 
@@ -127,7 +161,7 @@
             this.txtTotalD.Enabled = false;
             this.txtTotalD.Location = new System.Drawing.Point(602, 330);
             this.txtTotalD.Name = "txtTotalD";
-            this.txtTotalD.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalD.Size = new System.Drawing.Size(157, 20);
             this.txtTotalD.TabIndex = 7;
             // 
             // txtTotalImpuestoD
@@ -135,7 +169,7 @@
             this.txtTotalImpuestoD.Enabled = false;
             this.txtTotalImpuestoD.Location = new System.Drawing.Point(602, 303);
             this.txtTotalImpuestoD.Name = "txtTotalImpuestoD";
-            this.txtTotalImpuestoD.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalImpuestoD.Size = new System.Drawing.Size(157, 20);
             this.txtTotalImpuestoD.TabIndex = 6;
             // 
             // txtSubTotalD
@@ -143,7 +177,7 @@
             this.txtSubTotalD.Enabled = false;
             this.txtSubTotalD.Location = new System.Drawing.Point(602, 274);
             this.txtSubTotalD.Name = "txtSubTotalD";
-            this.txtSubTotalD.Size = new System.Drawing.Size(100, 20);
+            this.txtSubTotalD.Size = new System.Drawing.Size(157, 20);
             this.txtSubTotalD.TabIndex = 5;
             // 
             // label13
@@ -167,9 +201,9 @@
             // btnCerrarDetalle
             // 
             this.btnCerrarDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarDetalle.Location = new System.Drawing.Point(633, 17);
+            this.btnCerrarDetalle.Location = new System.Drawing.Point(849, 16);
             this.btnCerrarDetalle.Name = "btnCerrarDetalle";
-            this.btnCerrarDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrarDetalle.Size = new System.Drawing.Size(87, 35);
             this.btnCerrarDetalle.TabIndex = 1;
             this.btnCerrarDetalle.Text = "Cerrar";
             this.btnCerrarDetalle.UseVisualStyleBackColor = true;
@@ -184,14 +218,14 @@
             this.DgvMostrarDetalle.Name = "DgvMostrarDetalle";
             this.DgvMostrarDetalle.ReadOnly = true;
             this.DgvMostrarDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvMostrarDetalle.Size = new System.Drawing.Size(719, 211);
+            this.DgvMostrarDetalle.Size = new System.Drawing.Size(924, 211);
             this.DgvMostrarDetalle.TabIndex = 0;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(429, 17);
+            this.btnBuscar.Location = new System.Drawing.Point(429, 9);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(132, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(132, 28);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -200,7 +234,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(500, 423);
+            this.lblTotal.Location = new System.Drawing.Point(1076, 498);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 1;
@@ -218,7 +252,7 @@
             this.DgvListado.Name = "DgvListado";
             this.DgvListado.ReadOnly = true;
             this.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListado.Size = new System.Drawing.Size(928, 347);
+            this.DgvListado.Size = new System.Drawing.Size(1287, 423);
             this.DgvListado.TabIndex = 0;
             this.DgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellDoubleClick);
             // 
@@ -232,46 +266,12 @@
             // 
             this.errorIcono.ContainerControl = this;
             // 
-            // DtpFechaInicio
-            // 
-            this.DtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaInicio.Location = new System.Drawing.Point(67, 17);
-            this.DtpFechaInicio.Name = "DtpFechaInicio";
-            this.DtpFechaInicio.Size = new System.Drawing.Size(106, 20);
-            this.DtpFechaInicio.TabIndex = 9;
-            // 
-            // DtpFechaFin
-            // 
-            this.DtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaFin.Location = new System.Drawing.Point(272, 17);
-            this.DtpFechaFin.Name = "DtpFechaFin";
-            this.DtpFechaFin.Size = new System.Drawing.Size(111, 20);
-            this.DtpFechaFin.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Desde:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Hasta:";
-            // 
             // FrmConsulta_VentaFechas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(953, 584);
+            this.ClientSize = new System.Drawing.Size(1322, 584);
             this.Controls.Add(this.tabGeneral);
             this.Name = "FrmConsulta_VentaFechas";
             this.Text = "Consulta de ventas entre fechas";

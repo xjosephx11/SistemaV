@@ -65,7 +65,7 @@
             this.DgvListado.Name = "DgvListado";
             this.DgvListado.ReadOnly = true;
             this.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListado.Size = new System.Drawing.Size(833, 347);
+            this.DgvListado.Size = new System.Drawing.Size(1023, 360);
             this.DgvListado.TabIndex = 0;
             this.DgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellDoubleClick);
             // 
@@ -75,7 +75,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(2, 3);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(853, 480);
+            this.tabGeneral.Size = new System.Drawing.Size(1043, 508);
             this.tabGeneral.TabIndex = 4;
             // 
             // tabPage1
@@ -87,16 +87,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(845, 454);
+            this.tabPage1.Size = new System.Drawing.Size(1035, 482);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(383, 18);
+            this.btnBuscar.Location = new System.Drawing.Point(382, 10);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(132, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(132, 35);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(500, 409);
+            this.lblTotal.Location = new System.Drawing.Point(773, 441);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 1;
@@ -123,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(860, 485);
+            this.ClientSize = new System.Drawing.Size(1050, 523);
             this.Controls.Add(this.tabGeneral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmVista_ClienteVenta";

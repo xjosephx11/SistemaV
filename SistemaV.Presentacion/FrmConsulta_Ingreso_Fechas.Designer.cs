@@ -44,12 +44,12 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.DgvListado = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.DtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.DtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.DtpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrarDetalle)).BeginInit();
             this.PanelMostrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListado)).BeginInit();
@@ -67,7 +67,7 @@
             this.DgvMostrarDetalle.Name = "DgvMostrarDetalle";
             this.DgvMostrarDetalle.ReadOnly = true;
             this.DgvMostrarDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvMostrarDetalle.Size = new System.Drawing.Size(717, 211);
+            this.DgvMostrarDetalle.Size = new System.Drawing.Size(863, 211);
             this.DgvMostrarDetalle.TabIndex = 0;
             // 
             // Seleccionar
@@ -78,9 +78,9 @@
             // 
             // btnComprobanteIngreso
             // 
-            this.btnComprobanteIngreso.Location = new System.Drawing.Point(610, 19);
+            this.btnComprobanteIngreso.Location = new System.Drawing.Point(608, 13);
             this.btnComprobanteIngreso.Name = "btnComprobanteIngreso";
-            this.btnComprobanteIngreso.Size = new System.Drawing.Size(165, 23);
+            this.btnComprobanteIngreso.Size = new System.Drawing.Size(165, 29);
             this.btnComprobanteIngreso.TabIndex = 8;
             this.btnComprobanteIngreso.Text = "Comprobante";
             this.btnComprobanteIngreso.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@
             this.PanelMostrar.Controls.Add(this.label12);
             this.PanelMostrar.Controls.Add(this.btnCerrarDetalle);
             this.PanelMostrar.Controls.Add(this.DgvMostrarDetalle);
-            this.PanelMostrar.Location = new System.Drawing.Point(23, 149);
+            this.PanelMostrar.Location = new System.Drawing.Point(52, 170);
             this.PanelMostrar.Name = "PanelMostrar";
-            this.PanelMostrar.Size = new System.Drawing.Size(724, 362);
+            this.PanelMostrar.Size = new System.Drawing.Size(870, 362);
             this.PanelMostrar.TabIndex = 7;
             this.PanelMostrar.Visible = false;
             // 
@@ -117,7 +117,7 @@
             this.txtTotalD.Enabled = false;
             this.txtTotalD.Location = new System.Drawing.Point(602, 330);
             this.txtTotalD.Name = "txtTotalD";
-            this.txtTotalD.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalD.Size = new System.Drawing.Size(162, 20);
             this.txtTotalD.TabIndex = 7;
             // 
             // txtTotalImpuestoD
@@ -125,7 +125,7 @@
             this.txtTotalImpuestoD.Enabled = false;
             this.txtTotalImpuestoD.Location = new System.Drawing.Point(602, 303);
             this.txtTotalImpuestoD.Name = "txtTotalImpuestoD";
-            this.txtTotalImpuestoD.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalImpuestoD.Size = new System.Drawing.Size(162, 20);
             this.txtTotalImpuestoD.TabIndex = 6;
             // 
             // txtSubTotalD
@@ -133,7 +133,7 @@
             this.txtSubTotalD.Enabled = false;
             this.txtSubTotalD.Location = new System.Drawing.Point(602, 274);
             this.txtSubTotalD.Name = "txtSubTotalD";
-            this.txtSubTotalD.Size = new System.Drawing.Size(100, 20);
+            this.txtSubTotalD.Size = new System.Drawing.Size(162, 20);
             this.txtSubTotalD.TabIndex = 5;
             // 
             // label13
@@ -157,7 +157,7 @@
             // btnCerrarDetalle
             // 
             this.btnCerrarDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarDetalle.Location = new System.Drawing.Point(633, 17);
+            this.btnCerrarDetalle.Location = new System.Drawing.Point(780, 16);
             this.btnCerrarDetalle.Name = "btnCerrarDetalle";
             this.btnCerrarDetalle.Size = new System.Drawing.Size(75, 23);
             this.btnCerrarDetalle.TabIndex = 1;
@@ -167,9 +167,9 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(414, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(415, 13);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(165, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(165, 29);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -178,7 +178,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(500, 423);
+            this.lblTotal.Location = new System.Drawing.Point(1010, 496);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 1;
@@ -196,7 +196,7 @@
             this.DgvListado.Name = "DgvListado";
             this.DgvListado.ReadOnly = true;
             this.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListado.Size = new System.Drawing.Size(951, 347);
+            this.DgvListado.Size = new System.Drawing.Size(1199, 423);
             this.DgvListado.TabIndex = 0;
             this.DgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellDoubleClick);
             // 
@@ -214,48 +214,10 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(963, 547);
+            this.tabPage1.Size = new System.Drawing.Size(1221, 547);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabGeneral
-            // 
-            this.tabGeneral.Controls.Add(this.tabPage1);
-            this.tabGeneral.Location = new System.Drawing.Point(1, 1);
-            this.tabGeneral.Name = "tabGeneral";
-            this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(971, 573);
-            this.tabGeneral.TabIndex = 2;
-            // 
-            // errorIcono
-            // 
-            this.errorIcono.ContainerControl = this;
-            // 
-            // DtpFechaInicio
-            // 
-            this.DtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaInicio.Location = new System.Drawing.Point(74, 17);
-            this.DtpFechaInicio.Name = "DtpFechaInicio";
-            this.DtpFechaInicio.Size = new System.Drawing.Size(109, 20);
-            this.DtpFechaInicio.TabIndex = 9;
-            // 
-            // DtpFechaFin
-            // 
-            this.DtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaFin.Location = new System.Drawing.Point(255, 17);
-            this.DtpFechaFin.Name = "DtpFechaFin";
-            this.DtpFechaFin.Size = new System.Drawing.Size(110, 20);
-            this.DtpFechaFin.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Desde:";
             // 
             // label2
             // 
@@ -266,12 +228,50 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Hasta:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Desde:";
+            // 
+            // DtpFechaFin
+            // 
+            this.DtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaFin.Location = new System.Drawing.Point(255, 17);
+            this.DtpFechaFin.Name = "DtpFechaFin";
+            this.DtpFechaFin.Size = new System.Drawing.Size(110, 20);
+            this.DtpFechaFin.TabIndex = 10;
+            // 
+            // DtpFechaInicio
+            // 
+            this.DtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaInicio.Location = new System.Drawing.Point(74, 17);
+            this.DtpFechaInicio.Name = "DtpFechaInicio";
+            this.DtpFechaInicio.Size = new System.Drawing.Size(109, 20);
+            this.DtpFechaInicio.TabIndex = 9;
+            // 
+            // tabGeneral
+            // 
+            this.tabGeneral.Controls.Add(this.tabPage1);
+            this.tabGeneral.Location = new System.Drawing.Point(1, 1);
+            this.tabGeneral.Name = "tabGeneral";
+            this.tabGeneral.SelectedIndex = 0;
+            this.tabGeneral.Size = new System.Drawing.Size(1229, 573);
+            this.tabGeneral.TabIndex = 2;
+            // 
+            // errorIcono
+            // 
+            this.errorIcono.ContainerControl = this;
+            // 
             // FrmConsulta_Ingreso_Fechas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(972, 580);
+            this.ClientSize = new System.Drawing.Size(1242, 580);
             this.Controls.Add(this.tabGeneral);
             this.Name = "FrmConsulta_Ingreso_Fechas";
             this.Text = "Consulta de ingresos entre fechas";

@@ -40,10 +40,10 @@
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtNumeroDocumento = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cboTipoDocumento = new System.Windows.Forms.ComboBox();
@@ -71,7 +71,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(3, 3);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(853, 480);
+            this.tabGeneral.Size = new System.Drawing.Size(1081, 524);
             this.tabGeneral.TabIndex = 2;
             // 
             // tabPage1
@@ -85,16 +85,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(845, 454);
+            this.tabPage1.Size = new System.Drawing.Size(1073, 498);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(357, 413);
+            this.btnEliminar.Location = new System.Drawing.Point(319, 449);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(85, 32);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // chkSeleccionar
             // 
             this.chkSeleccionar.AutoSize = true;
-            this.chkSeleccionar.Location = new System.Drawing.Point(7, 413);
+            this.chkSeleccionar.Location = new System.Drawing.Point(25, 449);
             this.chkSeleccionar.Name = "chkSeleccionar";
             this.chkSeleccionar.Size = new System.Drawing.Size(82, 17);
             this.chkSeleccionar.TabIndex = 4;
@@ -113,9 +113,9 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(383, 18);
+            this.btnBuscar.Location = new System.Drawing.Point(390, 11);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(132, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(132, 32);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(500, 409);
+            this.lblTotal.Location = new System.Drawing.Point(834, 449);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 1;
@@ -149,7 +149,7 @@
             this.DgvListado.Name = "DgvListado";
             this.DgvListado.ReadOnly = true;
             this.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListado.Size = new System.Drawing.Size(833, 347);
+            this.DgvListado.Size = new System.Drawing.Size(1061, 373);
             this.DgvListado.TabIndex = 0;
             this.DgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellContentClick);
             this.DgvListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListado_CellDoubleClick);
@@ -194,15 +194,6 @@
             this.txtEmail.Size = new System.Drawing.Size(223, 20);
             this.txtEmail.TabIndex = 3;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(57, 314);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Email :";
-            // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(187, 262);
@@ -225,6 +216,15 @@
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Direccion :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(57, 314);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Email :";
             // 
             // txtNumeroDocumento
             // 
@@ -267,9 +267,9 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(155, 405);
+            this.btnActualizar.Location = new System.Drawing.Point(168, 405);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(102, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(102, 37);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -288,7 +288,7 @@
             // 
             this.btnCancelar.Location = new System.Drawing.Point(310, 405);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(94, 37);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -298,7 +298,7 @@
             // 
             this.btnInsertar.Location = new System.Drawing.Point(168, 405);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(89, 23);
+            this.btnInsertar.Size = new System.Drawing.Size(102, 37);
             this.btnInsertar.TabIndex = 5;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -347,7 +347,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(862, 490);
+            this.ClientSize = new System.Drawing.Size(1090, 530);
             this.Controls.Add(this.tabGeneral);
             this.Name = "FrmProveedor";
             this.Text = "Proveedores";
